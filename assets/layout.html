@@ -1,0 +1,40 @@
+{{ define "layout" }}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Сервис самоудаляемых заметок</title>
+
+    <style>
+        body {
+            font-family: monospace;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            color: #444;
+        }
+    </style>
+    {{ template "header" . }}
+</head>
+
+<body>
+    <header>
+        <h1>Сервис самоудаляемых заметок</h1>
+        <h2>Безопасные, самоуничтожающиеся заметки - делитесь секретами конфиденциально!</h2>
+    </header>
+    <main>
+        {{ template "content" . }}
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
+{{ end }}

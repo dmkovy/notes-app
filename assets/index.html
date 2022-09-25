@@ -1,0 +1,72 @@
+{{ define "header" }}
+<style>
+    label, textarea, button {
+        display: block;
+    }
+    label {
+        font-size: 1.1rem;
+    }
+    textarea {
+        box-sizing: border-box;
+        min-width: 300px;
+        width: 60%;
+        height: 30vmax;
+        margin: 1rem auto;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 1rem;
+    }
+    button {
+        box-sizing: border-box;
+        width: 300px;
+        margin: 2rem auto;
+        background: #335;
+        color: #fff;
+        padding: 1rem;
+        font-size: 1rem;
+        font-family: Helvetica, Roboto, sans-serif;
+        font-weight: 600;
+        border: 0;
+        border-radius: 3px;
+        cursor: pointer;
+        background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
+        /*background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);*/
+    }
+    button:hover {
+        background: #666;
+    }
+    form > div {
+        max-width: 300px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding: 5px;
+    }
+    form > div > input {
+        margin-right: 10px;
+    }
+    form > div > label {
+        font-size: 1rem;
+    }
+</style>
+{{ end }}
+
+{{ define "content" }}
+
+<form method="POST" action="/">
+    <label for="message">Заметка:</label>
+    <textarea id="message" name="message" placeholder="Введите текст"></textarea>
+    <div>
+        <input type="radio" id="ttl24h" name="ttl" value="24h" checked>
+        <label for="ttl24h">Удалить заметку через 24 часа</label>
+    </div>
+    <div>
+        <input type="radio" id="ttlUntilRead" name="ttl" value="untilRead">
+        <label for="ttlUntilRead">Удалить после прочтения</label>
+    </div>
+    <button type="submit">Создать заметку</button>
+</form>
+
+{{ end }}
